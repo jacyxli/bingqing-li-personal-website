@@ -11,6 +11,10 @@
   body {
     @apply bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen;
   }
+
+  p {
+    @apply font-sans text-secondary;
+  }
 }
 
 @layer components {
@@ -20,6 +24,10 @@
 
   .card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .flat-card {
+    @apply bg-white/50 rounded-xl backdrop-blur-sm duration-300;
   }
 
   .gradient-text {

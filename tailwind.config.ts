@@ -14,6 +14,8 @@ const config: Config = {
           DEFAULT: "#3b82f6",
           dark: "#2563eb",
         },
+        secondary: "#6b7280",
+        highlight: "#f948b4",
         background: "#ffffff",
         foreground: "#000000",
       },

@@ -5,6 +5,7 @@ import HeroSection from "../components/HeroSection";
 import { useEffect, useRef } from "react";
 import ResearchPage from "@/components/ResearchPage";
 import Section from "@/components/common/Section";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -34,37 +35,6 @@ export default function Home() {
 
   return (
     <motion.main ref={containerRef} className="transition-colors duration-300">
-      <style jsx global>{`
-        @keyframes flash {
-          0%,
-          100% {
-            opacity: 1;
-          }
-          50% {
-            opacity: 0;
-          }
-        }
-
-        :root {
-          --transition-duration: 300ms;
-          --dark-mode-progress: 0;
-        }
-
-        body {
-          transition: background-color var(--transition-duration) ease-in-out,
-            color var(--transition-duration) ease-in-out;
-        }
-
-        .card {
-          transition: background-color var(--transition-duration) ease-in-out,
-            border-color var(--transition-duration) ease-in-out;
-        }
-
-        .gradient-text {
-          transition: filter var(--transition-duration) ease-in-out;
-        }
-      `}</style>
-
       <HeroSection />
       <Section className="py-24">
         <ResearchPage />

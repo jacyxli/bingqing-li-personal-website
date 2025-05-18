@@ -12,7 +12,7 @@ import aiTechnologyContent from "@/content/research/ai-technology.md";
 import digitalPlatformsContent from "@/content/research/digital-platforms.md";
 import methodologyContent from "@/content/research/methodology.md";
 
-export default function ResearchPage() {
+export default function ResearchPage({ className }: { className?: string }) {
   const [selectedTopic, setSelectedTopic] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,8 +41,8 @@ export default function ResearchPage() {
   ];
 
   return (
-    <>
-      <div className="text-center mb-16  px-4">
+    <div className={className}>
+      <div className="text-center mb-16">
         <Heading as="h2" size="2xl" className="mb-4 gradient-text">
           Research
         </Heading>
@@ -57,7 +57,7 @@ export default function ResearchPage() {
         </Paragraph>
       </div>
 
-      <div className="text-center mb-16  px-4">
+      <div className="text-center mb-16">
         <Heading as="h2" size="xl" className="mb-4 gradient-text">
           Publications and Select Projects
         </Heading>
@@ -257,6 +257,7 @@ export default function ResearchPage() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 }}
                     className="md:w-2/3"
+                    onClick={() => setSelectedTopic(null)}
                   >
                     <AnimatePresence mode="wait">
                       <motion.div
@@ -279,6 +280,6 @@ export default function ResearchPage() {
           </AnimatePresence>
         </div>
       </div>
-    </>
+    </div>
   );
 }

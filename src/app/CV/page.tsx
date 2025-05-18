@@ -5,6 +5,7 @@ import Divider from "@/components/common/Divider";
 import ShareButton from "@/components/common/ShareButton";
 import DownloadIcon from "@/components/icons/DownloadIcon";
 import Paragraph from "@/components/common/Paragraph";
+import Heading from "@/components/common/Heading";
 
 export default function CV() {
   const skills = [
@@ -524,10 +525,22 @@ export default function CV() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <h4 className="text-xl font-semibold text-gray-900 mb-4">
+                <Heading
+                  as="h4"
+                  size="lg"
+                  animation="horizontal"
+                  className="mb-4 text-gray-900"
+                >
                   {group.category}
-                </h4>
-                <List items={group.items} />
+                </Heading>
+                {/* Mobile: comma-separated line */}
+                <div className="block md:hidden text-gray-700 dark:text-gray-200">
+                  {group.items.join(", ")}
+                </div>
+                {/* Desktop: vertical list */}
+                <div className="hidden md:block">
+                  <List items={group.items} />
+                </div>
               </motion.div>
             ))}
           </div>
@@ -538,9 +551,14 @@ export default function CV() {
           <div className="space-y-8">
             {coursework.map((group, index) => (
               <div key={group.category}>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                <Heading
+                  as="h4"
+                  size="lg"
+                  animation="horizontal"
+                  className="mb-2 text-gray-900"
+                >
                   {group.category}
-                </h4>
+                </Heading>
                 <List
                   items={group.items.map((item, idx) => (
                     <ListItem
@@ -581,7 +599,14 @@ function Section({
       transition={{ duration: 0.5 }}
     >
       <div className="relative group w-auto">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">{title}</h2>
+        <Heading
+          as="h2"
+          size="2xl"
+          animation="horizontal"
+          className="mb-4 text-gray-900"
+        >
+          {title}
+        </Heading>
       </div>
       {children}
       {showDivider && <Divider />}

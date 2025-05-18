@@ -1,6 +1,6 @@
 "use client";
 
-import { HTMLAttributes } from "react";
+import { Component, HTMLAttributes } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +9,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
   className?: string;
   children: React.ReactNode;
+  animation?: "horizontal" | "vertical";
 }
 
 const sizeClasses = {
@@ -28,12 +29,19 @@ export default function Heading({
   size = "md",
   className,
   children,
+  animation = "vertical",
   ...props
 }: HeadingProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={
+        animation === "vertical"
+          ? { opacity: 0, y: 20 }
+          : { opacity: 0, x: -40 }
+      }
+      whileInView={
+        animation === "vertical" ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 }
+      }
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >

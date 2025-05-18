@@ -1,43 +1,19 @@
 "use client";
 
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ResearchPage from "@/components/ResearchPage";
 import Section from "@/components/common/Section";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-  const darkThemeProgress = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-
-  useEffect(() => {
-    const updateDarkMode = () => {
-      const progress = darkThemeProgress.get();
-      document.documentElement.style.setProperty(
-        "--dark-mode-progress",
-        progress.toString()
-      );
-    };
-
-    const unsubscribe = (darkThemeProgress as MotionValue<number>).on(
-      "change",
-      updateDarkMode
-    );
-    updateDarkMode();
-
-    return () => unsubscribe();
-  }, [darkThemeProgress]);
 
   return (
     <motion.main ref={containerRef} className="transition-colors duration-300">
       <HeroSection />
       <Section className="py-24">
-        <ResearchPage />
+        <ResearchPage className="px-0" />
       </Section>
     </motion.main>
   );

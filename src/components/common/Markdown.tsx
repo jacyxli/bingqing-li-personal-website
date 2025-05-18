@@ -3,6 +3,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Divider from "./Divider";
+import ShareButton from "./ShareButton";
 
 interface MarkdownProps {
   content: string;
@@ -28,7 +29,7 @@ export default function Markdown({ content, className }: MarkdownProps) {
             <h3 className="text-lg font-bold mb-2" {...props} />
           ),
           p: ({ node, ...props }) => (
-            <p className="mb-4 text-md font-sans" {...props} />
+            <p className="mb-4 text-base font-sans" {...props} />
           ),
           strong: ({ node, ...props }) => (
             <strong className="font-bold" {...props} />
@@ -64,7 +65,7 @@ export default function Markdown({ content, className }: MarkdownProps) {
             <ol className="list-decimal ml-6 mb-4" {...props} />
           ),
           li: ({ node, ...props }) => <li className="mb-1" {...props} />,
-          hr: () => <Divider color="gray-300" />,
+          hr: () => <Divider />,
         }}
       >
         {content}

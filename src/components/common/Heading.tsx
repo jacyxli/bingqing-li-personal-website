@@ -12,15 +12,15 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 const sizeClasses = {
-  sm: "text-lg",
-  md: "text-xl",
-  lg: "text-2xl",
-  xl: "text-3xl",
-  "2xl": "text-4xl",
-  "3xl": "text-5xl",
-  "4xl": "text-6xl",
-  "5xl": "text-7xl",
-  "6xl": "text-8xl",
+  sm: "md:text-lg text-base",
+  md: "md:text-xl text-lg",
+  lg: "md:text-2xl text-xl",
+  xl: "md:text-3xl text-2xl",
+  "2xl": "md:text-4xl text-3xl",
+  "3xl": "md:text-5xl text-4xl",
+  "4xl": "md:text-6xl text-5xl",
+  "5xl": "md:text-7xl text-6xl",
+  "6xl": "md:text-8xl text-7xl",
 };
 
 export default function Heading({

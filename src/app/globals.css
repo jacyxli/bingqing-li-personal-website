@@ -57,6 +57,18 @@
   .font-trebuchet {
     font-family: "Trebuchet MS", Arial, sans-serif;
   }
+
+  .typography-emphasis {
+    @apply font-bold text-base md:text-lg;
+  }
+
+  .typography-normal {
+    @apply text-sm md:text-base;
+  }
+
+  .typography-desc {
+    @apply text-sm md:text-base;
+  }
 }
 
 @layer utilities {

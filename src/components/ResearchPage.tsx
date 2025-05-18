@@ -42,7 +42,7 @@ export default function ResearchPage() {
 
   return (
     <>
-      <div className="text-center mb-16">
+      <div className="text-center mb-16  px-4">
         <Heading as="h2" size="2xl" className="mb-4 gradient-text">
           Research
         </Heading>
@@ -57,7 +57,7 @@ export default function ResearchPage() {
         </Paragraph>
       </div>
 
-      <div className="text-center mb-16">
+      <div className="text-center mb-16  px-4">
         <Heading as="h2" size="xl" className="mb-4 gradient-text">
           Publications and Select Projects
         </Heading>

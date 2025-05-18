@@ -7,9 +7,9 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Bingqing Li - Software Engineer",
+  title: "Bingqing Li",
   description:
-    "Personal website of Bingqing Li, a software engineer passionate about building beautiful and functional web applications.",
+    "Bingqing Li is a Ph.D. candidate in Marketing at Virginia Tech. She researches how emerging technologies influence consumer behavior and marketing decisions, using machine learning, econometrics, and experiments to understand the impact of digital platforms on consumer behavior and marketing decisions.",
 };
 
 export default function RootLayout({

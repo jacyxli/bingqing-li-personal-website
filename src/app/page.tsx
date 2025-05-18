@@ -2,8 +2,9 @@
 
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import HeroSection from "../components/HeroSection";
-import FeaturedSection from "../components/FeaturedSection";
 import { useEffect, useRef } from "react";
+import ResearchPage from "@/components/ResearchPage";
+import Section from "@/components/common/Section";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -65,7 +66,9 @@ export default function Home() {
       `}</style>
 
       <HeroSection />
-      <FeaturedSection />
+      <Section className="py-24">
+        <ResearchPage />
+      </Section>
     </motion.main>
   );
 }

@@ -1,20 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Section from "./Section";
-import Heading from "./Heading";
-import Paragraph from "./Paragraph";
+import Heading from "@/components/common/Heading";
+import Paragraph from "@/components/common/Paragraph";
 
-export default function FeaturedSection() {
+export default function ResearchPage() {
   return (
-    <Section className="py-24">
+    <>
       <div className="text-center mb-16">
         <Heading as="h2" size="2xl" className="mb-4 gradient-text">
-          Featured Work
+          Research
         </Heading>
         <Paragraph className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Here are some of my recent projects that showcase my skills and
-          experience.
+          Explore my research work and publications in the field of computer
+          science and artificial intelligence.
         </Paragraph>
       </div>
 
@@ -35,15 +34,16 @@ export default function FeaturedSection() {
                 size="lg"
                 className="mb-2 group-hover:text-primary transition-colors"
               >
-                Project {i}
+                Research Project {i}
               </Heading>
               <Paragraph className="text-gray-600 dark:text-gray-400">
-                A brief description of the project and the technologies used.
+                A detailed overview of the research project, including
+                methodology, findings, and impact.
               </Paragraph>
             </div>
           </motion.div>
         ))}
       </div>
-    </Section>
+    </>
   );
 }

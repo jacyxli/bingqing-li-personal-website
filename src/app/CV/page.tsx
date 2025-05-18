@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Divider from "@/components/Divider";
+import Divider from "@/components/common/Divider";
 
 export default function About() {
   const skills = [

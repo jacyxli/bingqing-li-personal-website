@@ -1,5 +1,6 @@
 "use client";
 
+import ResearchSection from "@/components/ResearchPage";
 import { motion } from "framer-motion";
 
 const projects = [
@@ -50,51 +51,7 @@ const projects = [
 export default function Projects() {
   return (
     <main className="min-h-screen pt-24 pb-16">
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl font-bold gradient-text mb-6">My Projects</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A collection of my recent work, showcasing various technologies and
-            solutions I've built to solve real-world problems.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card group hover:scale-[1.02] transition-all duration-300"
-            >
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/20"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm hover:bg-primary/20 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+      <ResearchSection />
     </main>
   );
 }

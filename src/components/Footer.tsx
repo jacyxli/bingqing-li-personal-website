@@ -21,7 +21,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Bingqing Li
+              BL.
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
               Building innovative solutions for complex problems through code

@@ -23,7 +23,7 @@
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#3b82f6] to-[#2563eb];
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-[#3b82f6] to-[#2563eb];
   }
 
   .nav-link {
@@ -44,6 +44,10 @@
 
   .nav-link.active::after {
     @apply w-full;
+  }
+
+  .font-trebuchet {
+    font-family: "Trebuchet MS", Arial, sans-serif;
   }
 }
 

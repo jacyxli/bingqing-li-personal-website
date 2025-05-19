@@ -9,7 +9,7 @@ interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   size?: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
   className?: string;
   children: React.ReactNode;
-  animation?: "horizontal" | "vertical";
+  animation?: "horizontal" | "vertical" | "none";
 }
 
 const sizeClasses = {
@@ -37,11 +37,11 @@ export default function Heading({
       initial={
         animation === "vertical"
           ? { opacity: 0, y: 20 }
-          : { opacity: 0, x: -40 }
+          : animation === "horizontal"
+          ? { opacity: 0, x: -40 }
+          : { opacity: 1 }
       }
-      whileInView={
-        animation === "vertical" ? { opacity: 1, y: 0 } : { opacity: 1, x: 0 }
-      }
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >

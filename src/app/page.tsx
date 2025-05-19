@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <motion.main ref={containerRef} className="transition-colors duration-300">
       <HeroSection />
-      <Section className="py-24">
+      <Section className="py-24 px-4 sm:px-6 lg:px-8">
         <ResearchPage className="px-0" />
       </Section>
     </motion.main>

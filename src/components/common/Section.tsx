@@ -24,7 +24,7 @@ export default function Section({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className={cn("py-16 px-4 sm:px-6 lg:px-8", className)}
+      className={cn("py-16", className)}
     >
       <div className="max-w-7xl mx-auto">{children}</div>
     </motion.section>

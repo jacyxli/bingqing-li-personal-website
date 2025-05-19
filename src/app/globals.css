@@ -65,10 +65,6 @@
   .typography-normal {
     @apply text-sm md:text-base;
   }
-
-  .typography-desc {
-    @apply text-sm md:text-base;
-  }
 }
 
 @layer utilities {
